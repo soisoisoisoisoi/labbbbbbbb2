@@ -14,19 +14,16 @@ const outputDiv = document.getElementById("outputDiv");
 
 // Uppgift 5 - Eventhantering
 
-// Funktionen körs när man skriver i eller lämnar
-// något av textfälten. Vi loggar e.target, tar reda på vilket
-// fält som skickade eventet och om det var "content" så skriver
-// vi värdet till output-diven.
 function handleInputEvent(e) {
-  console.log("Event target:", e.target);
+  //funktionsdeklaration handleInputEvent tar emot argumentet e, event-objektet från webbläsaren
+  console.log("Event target:", e.target); //loggar ut e.target i konsolen, det HTML-element som utlöste eventet
 
-  const targetName = e.target.name;
-  console.log("Elementets name-attribut:", targetName);
+  const targetName = e.target.name; //hämtar name-attributet från det element som utlöste eventet
+  console.log("Elementets name-attribut:", targetName); //skriver ut name-attributet i konsolen
 
   if (targetName === "content") {
-    // Uppdatera texten i div
-    outputDiv.innerHTML = e.target.value;
+    //kollar om name-attributet är "content"
+    outputDiv.innerHTML = e.target.value; //om = content skrivs värdet från textfältet in i div:en (live-uppdatering)
   }
 }
 
